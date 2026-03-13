@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BTSSFF Brand Guidelines 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,700;1,9..40,400&display=swap');
+  @font-face {
+    font-family: 'FatFrank';
+    src: url('fonts/fat-frank-heavy.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Antarctican Headline';
+    src: url('fonts/AntarcticanHeadline-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  :root {
+    --navy: #011632;
+    --denim: #9EC7D5;
+    --slate: #546E85;
+    --rose: #C9546A;
+    --off-white: #F5F3EF;
+    --red: #BF2A2A;
+    --yellow: #CDFF00;
+    --hot-pink: #FF10F0;
+    --coral: #FF4D00;
+    --mint: #3DFFC0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--navy);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* PAGE WRAPPER */
+  .page {
+    width: 1240px;
+    min-height: 957px;
+    margin: 0 auto 48px;
+    background: white;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* HEADER BAR */
+  .page-header {
+    font-family: 'FatFrank', sans-serif;
+    background: var(--navy);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 24px;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .page-header .left { font-weight: 700; }
+  .page-header .right { color: var(--denim); }
+
+  /* FOOTER BAR */
+  .page-footer {
+    background: var(--navy);
+    color: var(--slate);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 24px;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .page-footer .presented {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--denim);
+  }
+
+  .btp-logo-placeholder {
+    width: 24px;
+    height: 24px;
+    background: var(--red);
+    border-radius: 3px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 7px;
+    color: white;
+    text-align: center;
+    line-height: 24px;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+
+  /* PAGE CONTENT */
+  .page-body {
+    display: grid;
+    padding: 32px;
+    gap: 32px;
+    flex: 1;
+    align-content: start;
+  }
+
+  .page-body.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .page-body.cols-2 { grid-template-columns: 1fr 1fr; }
+  .page-body.cols-2-1 { grid-template-columns: 2fr 1fr; }
+
+  /* SECTION LABELS */
+  .section-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 6px;
+  }
+
+  .section-title {
+    font-family: 'FatFrank', sans-serif;
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 16px;
+    line-height: 1;
+  }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 2px solid var(--denim);
+    margin-bottom: 16px;
+  }
+
+  /* COLOR SWATCHES */
+  .swatch-list { display: flex; flex-direction: column; gap: 6px; }
+
+  .swatch-row {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .swatch {
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+    flex-shrink: 0;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .swatch-info .name {
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .swatch-info .hex {
+    font-size: 10px;
+    color: var(--slate);
+    font-family: monospace;
+  }
+
+  .swatch-info .use {
+    font-size: 10px;
+    color: var(--slate);
+  }
+
+  /* SOCIAL COLOR GRID */
+  .social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .social-swatch {
+    padding: 14px 12px;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .social-swatch .hex-small {
+    font-size: 9px;
+    font-weight: 400;
+    display: block;
+    margin-top: 2px;
+    opacity: 0.75;
+  }
+
+  /* BACKGROUNDS TABLE */
+  .bg-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  .bg-table tr { border-bottom: 1px solid #e8e4de; }
+  .bg-table td { padding: 7px 8px; font-size: 11px; vertical-align: middle; }
+  .bg-table td:first-child { width: 28px; }
+  .bg-table .bg-chip {
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(0,0,0,0.1);
+    display: inline-block;
+  }
+  .bg-table .bg-name { font-weight: 700; }
+  .bg-table .bg-use { color: var(--slate); }
+
+  /* YES/NO RULES */
+  .rules-box {
+    border-radius: 0;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+  }
+
+  .rules-box.yes { background: #f0faf2; border-left: 3px solid #2d9e5f; }
+  .rules-box.no { background: #fdf0f2; border-left: 3px solid var(--rose); }
+
+  .rules-box .rules-head {
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+
+  .rules-box.yes .rules-head { color: #2d9e5f; }
+  .rules-box.no .rules-head { color: var(--rose); }
+
+  .rules-box ul { list-style: none; }
+  .rules-box ul li {
+    font-size: 11px;
+    padding: 2px 0;
+    padding-left: 16px;
+    position: relative;
+    color: var(--navy);
+  }
+
+  .rules-box.yes ul li::before { content: '✓'; position: absolute; left: 0; color: #2d9e5f; font-weight: 700; }
+  .rules-box.no ul li::before { content: '✕'; position: absolute; left: 0; color: var(--rose); font-weight: 700; }
+
+  /* TYPOGRAPHY TABLE */
+  .type-table { width: 100%; border-collapse: collapse; }
+  .type-table thead tr { border-bottom: 2px solid var(--navy); }
+  .type-table thead td {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 6px 8px;
+    color: var(--slate);
+  }
+  .type-table tbody tr { border-bottom: 1px solid #e8e4de; }
+  .type-table tbody td { padding: 8px; font-size: 11px; vertical-align: top; }
+  .type-table .role { font-weight: 700; color: var(--navy); }
+  .type-table .font-name { color: var(--navy); }
+  .type-table .font-alt { color: var(--slate); font-size: 10px; display: block; }
+  .type-table .size { color: var(--slate); font-family: monospace; font-size: 10px; }
+  .type-table .where { color: var(--slate); font-size: 10px; }
+
+  /* TYPE EXAMPLES */
+  .type-demo {
+    background: var(--navy);
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+
+  .type-demo-fatfrank {
+    font-family: 'FatFrank', sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: white;
+    line-height: 0.9;
+    letter-spacing: -0.01em;
+  }
+
+  .type-demo-label {
+    font-size: 9px;
+    color: var(--denim);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-top: 8px;
+  }
+
+  .type-demo-antarctican {
+    font-family: 'Antarctican Headline', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    margin-top: 16px;
+  }
+
+  .type-demo-body {
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    margin-top: 8px;
+    font-weight: 400;
+  }
+
+  .pills-demo {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+
+  .pill {
+    font-family: 'FatFrank', sans-serif;
+    background: var(--rose);
+    color: white;
+    font-size: 8px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+  }
+
+  .pill.outline {
+    background: transparent;
+    border: 1px solid var(--denim);
+    color: var(--denim);
+  }
+
+  .font-note {
+    background: var(--off-white);
+    border-left: 3px solid var(--denim);
+    padding: 12px 16px;
+    font-size: 11px;
+    color: var(--slate);
+    margin-bottom: 16px;
+  }
+
+  .font-note strong { color: var(--navy); }
+
+  /* LOGO PAGE */
+  .logo-display {
+    background: var(--navy);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .logo-placeholder {
+    border: 1px dashed rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+
+  .logo-placeholder.shorts-main { width: 180px; height: 180px; }
+  .logo-placeholder.shorts-legs { width: 180px; height: 200px; }
+  .logo-placeholder.shorts-square { width: 80px; height: 80px; }
+  .logo-placeholder.laurel-wide { width: 300px; height: 80px; }
+
+  .logo-display-light {
+    background: var(--off-white);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+    border: 1px solid #e0dcd6;
+  }
+
+  .logo-placeholder.laurel-navy { width: 300px; height: 80px; }
+
+  .logo-versions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .version-box {
+    padding: 12px;
+    font-size: 10px;
+  }
+
+  .version-box.dark-bg { background: var(--navy); color: white; }
+  .version-box.light-bg { background: var(--off-white); border: 1px solid #ddd; }
+
+  .version-box .v-label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    opacity: 0.6;
+  }
+
+  /* LOGO RULES TABLE */
+  .logo-table { width: 100%; border-collapse: collapse; }
+  .logo-table tr { border-bottom: 1px solid #e8e4de; }
+  .logo-table td { padding: 7px 8px; font-size: 11px; vertical-align: top; }
+  .logo-table .situation { font-weight: 700; color: var(--navy); width: 45%; }
+  .logo-table .what { color: var(--slate); }
+  .logo-table tr.never td { color: var(--rose); }
+  .logo-table tr.never td.situation { font-weight: 700; }
+
+  /* TAPE LABEL */
+  .tape-label-demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: -4px;
+    margin: 16px 0;
+  }
+
+  .tape-label {
+    font-family: 'FatFrank', sans-serif;
+    background: url('images/large-tape.png') center/cover no-repeat;
+    padding: 10px 28px;
+    font-weight: 900;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--navy);
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-bottom: -2px;
+  }
+
+  .tape-label:nth-child(1) { transform: rotate(-1.5deg); }
+  .tape-label:nth-child(2) { transform: rotate(1deg); }
+  .tape-label:nth-child(3) { transform: rotate(-0.8deg); }
+
+  .tape-how {
+    background: var(--off-white);
+    padding: 14px 16px;
+    font-size: 11px;
+    margin-top: 16px;
+  }
+
+  .tape-how ul { list-style: none; padding: 0; }
+  .tape-how ul li {
+    padding: 3px 0;
+    padding-left: 14px;
+    position: relative;
+    color: var(--navy);
+  }
+  .tape-how ul li::before { content: '·'; position: absolute; left: 0; color: var(--slate); }
+
+  /* POSTER SYSTEM */
+  .poster-mini {
+    background: var(--navy);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .poster-title-stack {
+    font-size: 24px;
+    font-family: 'FatFrank', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: white;
+    line-height: 0.9;
+    letter-spacing: -0.01em;
+  }
+
+  .poster-shorts-img {
+    width: 80px;
+    height: 90px;
+    background: var(--slate);
+    border: 1px dashed rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    color: rgba(255,255,255,0.3);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .edition-pill {
+    background: var(--rose);
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    display: inline-block;
+    margin-top: 8px;
+  }
+
+  /* FILM ANNOUNCEMENT CARDS */
+  .card-colors {
+    display: flex;
+    gap: 6px;
+    margin: 12px 0;
+  }
+
+  .card-color-chip {
+    flex: 1;
+    padding: 10px 6px;
+    text-align: center;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .card-note {
+    font-size: 11px;
+    color: var(--slate);
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+
+  /* PHOTO / EMAIL SECTION */
+  .two-col-notes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .note-block { }
+
+  .note-block h3 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--denim);
+  }
+
+  .note-block p {
+    font-size: 11px;
+    color: var(--slate);
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+
+  .note-block ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .note-block ul li {
+    font-size: 11px;
+    padding: 3px 0 3px 16px;
+    position: relative;
+    color: var(--navy);
+    border-bottom: 1px solid #f0ece6;
+  }
+
+  .note-block ul li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--slate);
+    font-weight: 700;
+  }
+
+  .note-block ul li.avoid { color: var(--rose); }
+  .note-block ul li.avoid::before { content: '✕'; color: var(--rose); font-size: 9px; }
+  .note-block ul li.yes::before { content: '✓'; color: #2d9e5f; font-size: 9px; }
+
+  /* FULL-WIDTH QUICK RULES */
+  .quick-rules-full {
+    background: var(--navy);
+    padding: 14px 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    flex-shrink: 0;
+  }
+
+  .quick-rules-full .qr-head {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+    font-family: 'FatFrank', sans-serif;
+  }
+
+  .quick-rules-full .always-head { color: #3DFFC0; }
+  .quick-rules-full .never-head { color: var(--rose); }
+
+  .quick-rules-full ul { list-style: none; }
+  .quick-rules-full ul li {
+    font-size: 9.5px;
+    color: rgba(255,255,255,0.85);
+    padding: 3px 0 3px 16px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .always-col ul li::before { content: '✓'; position: absolute; left: 0; color: #3DFFC0; font-size: 9px; font-weight: 700; }
+  .never-col ul li::before { content: '✕'; position: absolute; left: 0; color: var(--rose); font-size: 9px; font-weight: 700; }
+
+
+
+  /* SECTION COLUMN DIVIDER */
+  .col-divider {
+    border: none;
+    border-left: 1px solid #e8e4de;
+  }
+
+  .inner-section { margin-bottom: 28px; }
+  .inner-section:last-child { margin-bottom: 0; }
+
+  /* NOTE CALLOUT */
+  .callout {
+    background: var(--off-white);
+    border-left: 3px solid var(--denim);
+    padding: 10px 14px;
+    font-size: 10px;
+    color: var(--slate);
+    margin-top: 12px;
+    line-height: 1.5;
+  }
+  .callout strong { color: var(--navy); }
+
+</style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- PAGE 1: COLORS -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="page-header">
+    <span class="left">Big Teeth Small Shorts Film Fest · Brand Guidelines 2026</span>
+    <span class="right">Colors · 1 of 4 · Internal Brand Reference · 2026 Edition</span>
+  </div>
+
+  <div class="page-body" style="display:grid; grid-template-columns:2fr 1fr 1fr; gap:32px;">
+
+    <!-- PRIMARY COLORS — gets the most space and visual weight -->
+    <div>
+      <div class="section-label">The Palette</div>
+      <div class="section-title">Primary Colors</div>
+      <hr class="divider">
+      <div style="display:flex; flex-direction:column; gap:8px;">
+
+        <!-- Navy — extra tall, most important -->
+        <div style="background:#011632; padding:16px 14px; min-height:80px;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+            <div style="font-family:'FatFrank',sans-serif; font-size:13px; font-weight:900; color:white; text-transform:uppercase; letter-spacing:0.05em;">Navy</div>
+            <div style="font-size:13px; font-weight:700; color:rgba(255,255,255,0.9); font-family:monospace; letter-spacing:0.05em; user-select:all; cursor:text;">#011632</div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px;">
+            <div style="font-size:9px; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:0.08em;">Background</div>
+            <div style="font-size:9px; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:0.08em;">Text</div>
+            <div style="font-size:10px; color:rgba(255,255,255,0.75);">Posters, headers, card backs, social covers</div>
+            <div style="font-size:10px; color:rgba(255,255,255,0.75);">Footer text, fine print on light backgrounds</div>
+          </div>
+        </div>
+
+        <!-- Denim Blue -->
+        <div style="background:#9EC7D5; padding:12px 14px; min-height:64px;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+            <div style="font-family:'FatFrank',sans-serif; font-size:12px; font-weight:900; color:#011632; text-transform:uppercase; letter-spacing:0.05em;">Denim Blue</div>
+            <div style="font-size:13px; font-weight:700; color:rgba(1,22,50,0.8); font-family:monospace; letter-spacing:0.05em; user-select:all; cursor:text;">#9EC7D5</div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px;">
+            <div style="font-size:9px; color:rgba(1,22,50,0.5); text-transform:uppercase; letter-spacing:0.08em;">Graphic</div>
+            <div style="font-size:9px; color:rgba(1,22,50,0.5); text-transform:uppercase; letter-spacing:0.08em;">Text</div>
+            <div style="font-size:10px; color:rgba(1,22,50,0.8);">Rule lines, accent bars, dividers</div>
+            <div style="font-size:10px; color:rgba(1,22,50,0.8);">Secondary/tagline text on navy</div>
+          </div>
+        </div>
+
+        <!-- Slate -->
+        <div style="background:#546E85; padding:12px 14px; min-height:64px;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+            <div style="font-family:'FatFrank',sans-serif; font-size:12px; font-weight:900; color:white; text-transform:uppercase; letter-spacing:0.05em;">Slate</div>
+            <div style="font-size:13px; font-weight:700; color:rgba(255,255,255,0.9); font-family:monospace; letter-spacing:0.05em; user-select:all; cursor:text;">#546E85</div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px;">
+            <div style="font-size:9px; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:0.08em;">Background</div>
+            <div style="font-size:9px; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:0.08em;">Text</div>
+            <div style="font-size:10px; color:rgba(255,255,255,0.85);">Poster backgrounds, social accent backgrounds — not as a default digital background</div>
+            <div style="font-size:10px; color:rgba(255,255,255,0.85);">Secondary body text on navy</div>
+          </div>
+        </div>
+
+        <!-- Rose -->
+        <div style="background:#C9546A; padding:12px 14px; min-height:64px;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+            <div style="font-family:'FatFrank',sans-serif; font-size:12px; font-weight:900; color:white; text-transform:uppercase; letter-spacing:0.05em;">Rose</div>
+            <div style="font-size:13px; font-weight:700; color:rgba(255,255,255,0.9); font-family:monospace; letter-spacing:0.05em; user-select:all; cursor:text;">#C9546A</div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px;">
+            <div style="font-size:9px; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.08em;">Graphic / UI</div>
+            <div style="font-size:9px; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.08em;">Text</div>
+            <div style="font-size:10px; color:rgba(255,255,255,0.9);">CTAs, edition pills, deadline callouts — use sparingly</div>
+            <div style="font-size:10px; color:rgba(255,255,255,0.9);">Short FatFrank accent lines only — never paragraph or body copy</div>
+          </div>
+        </div>
+
+        <!-- Off-White -->
+        <div style="background:#F5F3EF; border:1px solid #ddd; padding:12px 14px; min-height:72px;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+            <div style="font-family:'FatFrank',sans-serif; font-size:12px; font-weight:900; color:#011632; text-transform:uppercase; letter-spacing:0.05em;">Off-White</div>
+            <div style="font-size:13px; font-weight:700; color:rgba(1,22,50,0.75); font-family:monospace; letter-spacing:0.05em; user-select:all; cursor:text;">#F5F3EF</div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px;">
+            <div style="font-size:9px; color:rgba(1,22,50,0.45); text-transform:uppercase; letter-spacing:0.08em;">Background</div>
+            <div style="font-size:9px; color:rgba(1,22,50,0.45); text-transform:uppercase; letter-spacing:0.08em;">Graphic</div>
+            <div style="font-size:10px; color:rgba(1,22,50,0.7);">Digital surfaces, brand docs, tape label base — not for print</div>
+            <div style="font-size:10px; color:rgba(1,22,50,0.7);">Secondary accent areas, section dividers</div>
+          </div>
+        </div>
+
+        <!-- Red -->
+        <div style="background:#BF2A2A; padding:12px 14px; min-height:56px;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+            <div style="font-family:'FatFrank',sans-serif; font-size:12px; font-weight:900; color:white; text-transform:uppercase; letter-spacing:0.05em;">Red</div>
+            <div style="font-size:13px; font-weight:700; color:rgba(255,255,255,0.9); font-family:monospace; letter-spacing:0.05em; user-select:all; cursor:text;">#BF2A2A</div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px;">
+            <div style="font-size:9px; color:rgba(255,255,255,0.55); text-transform:uppercase; letter-spacing:0.08em;">Graphic</div>
+            <div style="font-size:9px; color:rgba(255,255,255,0.55); text-transform:uppercase; letter-spacing:0.08em;">Brand connection</div>
+            <div style="font-size:10px; color:rgba(255,255,255,0.85);">Chatter Teeth illustration — referenced from this color</div>
+            <div style="font-size:10px; color:rgba(255,255,255,0.85);">Ties to Big Teeth Productions brand identity</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SOCIAL POSTER COLORS + BACKGROUNDS — secondary column -->
+    <div>
+      <div class="section-label">Film Moment Colors · Social Only</div>
+      <div class="section-title" style="font-size:20px;">Accent Palette</div>
+      <hr class="divider">
+      <p style="font-size:10px; color:var(--slate); margin-bottom:10px; line-height:1.5;">Used exclusively when celebrating a specific film or filmmaker — Official Selection announcements, winner posts, award callouts. One color per post, rotated across the set. <strong style="color:var(--navy);">Never in print. Never on the primary logo mark. Never mixed in the same post.</strong></p>
+
+      <div class="callout" style="margin-bottom:10px;">
+        <strong>The rule:</strong> If a post celebrates a film or filmmaker, use the accent palette. If it's operational — deadlines, tickets, carousels, headers — stay in the primary palette. See page 4 for approved background + laurel combinations.
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:6px; margin-bottom:20px;">
+        <div style="background:#CDFF00; color:#011632; padding:10px 10px; font-family:'FatFrank',sans-serif; font-size:10px; font-weight:900; text-transform:uppercase; letter-spacing:0.05em;">
+          Neon Yellow-Green
+          <div style="font-family:monospace; font-size:12px; font-weight:700; margin-top:3px; color:rgba(1,22,50,0.8); user-select:all; cursor:text;">#CDFF00</div>
+        </div>
+        <div style="background:#FF10F0; color:white; padding:10px 10px; font-family:'FatFrank',sans-serif; font-size:10px; font-weight:900; text-transform:uppercase; letter-spacing:0.05em;">
+          Electric Magenta
+          <div style="font-family:monospace; font-size:12px; font-weight:700; margin-top:3px; color:rgba(255,255,255,0.9); user-select:all; cursor:text;">#FF10F0</div>
+        </div>
+        <div style="background:#FF4D00; color:white; padding:10px 10px; font-family:'FatFrank',sans-serif; font-size:10px; font-weight:900; text-transform:uppercase; letter-spacing:0.05em;">
+          Electric Orange
+          <div style="font-family:monospace; font-size:12px; font-weight:700; margin-top:3px; color:rgba(255,255,255,0.9); user-select:all; cursor:text;">#FF4D00</div>
+        </div>
+        <div style="background:#3DFFC0; color:#011632; padding:10px 10px; font-family:'FatFrank',sans-serif; font-size:10px; font-weight:900; text-transform:uppercase; letter-spacing:0.05em;">
+          Electric Mint
+          <div style="font-family:monospace; font-size:12px; font-weight:700; margin-top:3px; color:rgba(1,22,50,0.8); user-select:all; cursor:text;">#3DFFC0</div>
+        </div>
+      </div>
+
+      <div class="section-label">Backgrounds</div>
+      <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:8px;">When to Use What</div>
+      <table class="bg-table">
+        <tr>
+          <td><div class="bg-chip" style="background:#011632;"></div></td>
+          <td class="bg-name">Navy</td>
+          <td class="bg-use">Posters, social headers, event covers, film cards</td>
+        </tr>
+        <tr>
+          <td><div class="bg-chip" style="background:#F5F3EF; border:1px solid #ccc;"></div></td>
+          <td class="bg-name">Off-White</td>
+          <td class="bg-use">Digital backgrounds only</td>
+        </tr>
+        <tr>
+          <td><div class="bg-chip" style="background:#ffffff; border:1px solid #ccc;"></div></td>
+          <td class="bg-name">White</td>
+          <td class="bg-use">Print and booklets only</td>
+        </tr>
+        <tr>
+          <td><div class="bg-chip" style="background:#546E85;"></div></td>
+          <td class="bg-name">Slate</td>
+          <td class="bg-use">Poster backgrounds, social accents — not as default digital background</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- COLOR RULES -->
+    <div>
+      <div class="section-label">Quick Reference</div>
+      <div class="section-title" style="font-size:20px;">Color Rules</div>
+      <hr class="divider">
+
+      <div class="rules-box yes">
+        <div class="rules-head">Yes</div>
+        <ul>
+          <li>Navy as your default dark background</li>
+          <li>White as your print background</li>
+          <li>Off-White for digital backgrounds</li>
+          <li>Denim Blue for rule lines and accents</li>
+          <li>Rose for CTAs, pills, and short FatFrank accent lines</li>
+          <li>Slate for poster and social accent backgrounds</li>
+          <li>Rotate all four Accent Palette colors</li>
+        </ul>
+      </div>
+
+      <div class="rules-box no">
+        <div class="rules-head">No</div>
+        <ul>
+          <li>Accent Palette colors in printed materials or on the logo mark</li>
+          <li>Multiple Accent Palette colors in the same post</li>
+          <li>Rose as paragraph or body copy</li>
+        </ul>
+      </div>
+
+      <div class="callout">
+        <strong>Red (#BF2A2A):</strong> The Chatter Teeth illustration is the primary home for this color, and it connects to the Big Teeth Productions brand identity. Use sparingly and intentionally elsewhere — it carries weight.
+      </div>
+    </div>
+
+  </div><!-- end page-body -->
+
+  <div class="page-footer">
+    <span>bigteethsmallshorts.com · Chicago, IL · Internal Brand Reference · 2026</span>
+    <span class="presented">Presented by <img src="images/BTP_Box_Red_Vertical.png" alt="Big Teeth Productions" style="height:24px; width:auto; object-fit:contain;"></span>
+  </div>
+</div>
+
+
+<!-- ============================================================ -->
+<!-- PAGE 2: TYPOGRAPHY + LOGOS -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="page-header">
+    <span class="left">Big Teeth Small Shorts Film Fest · Brand Guidelines 2026</span>
+    <span class="right">Typography &amp; Logos · 2 of 4 · Internal Brand Reference · 2026 Edition</span>
+  </div>
+
+  <div class="page-body cols-2">
+
+    <!-- LEFT: TYPOGRAPHY -->
+    <div>
+      <div class="section-label">Type</div>
+      <div class="section-title">The Three Fonts</div>
+      <hr class="divider">
+
+      <!-- TYPE IN USE: FILM CARD DEMO -->
+      <div style="border:2px solid var(--navy); margin-bottom:10px;">
+        <div style="background:var(--navy); padding:8px 14px;">
+          <span style="font-family:'FatFrank',sans-serif; font-size:10px; font-weight:900; color:white; text-transform:uppercase; letter-spacing:0.1em;">Type in Use</span>
+        </div>
+        <!-- fake film program entry -->
+        <div style="background:var(--navy); padding:12px 16px 10px;">
+          <!-- edition pill -->
+          <div style="display:inline-block; background:var(--rose); padding:3px 10px; margin-bottom:12px;">
+            <span style="font-family:'FatFrank',sans-serif; font-size:8px; font-weight:900; color:white; text-transform:uppercase; letter-spacing:0.12em;">Winter 2026 · Small Short</span>
+          </div>
+          <!-- film title in Antarctican -->
+          <div style="font-family:'Antarctican Headline',serif; font-size:20px; font-weight:700; color:white; line-height:1.1; margin-bottom:4px;">Godzilla's Day Off!</div>
+          <!-- director credit in DM Sans bold -->
+          <div style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:700; color:var(--denim); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">Directed by Myra Sito Velasquez · 4:52</div>
+          <!-- divider -->
+          <div style="height:1px; background:rgba(158,199,213,0.3); margin-bottom:10px;"></div>
+          <!-- body copy in DM Sans -->
+          <div style="font-family:'DM Sans',sans-serif; font-size:11px; color:rgba(255,255,255,0.8); line-height:1.55;">Even the most fearsome creatures need a vacation. A love letter to lazy Sundays, stop-motion chaos, and the monster at the end of your to-do list.</div>
+        </div>
+        <!-- festival header fragment in FatFrank -->
+        <div style="background:var(--slate); padding:8px 16px; display:flex; justify-content:space-between; align-items:center;">
+          <div style="font-family:'FatFrank',sans-serif; font-size:16px; font-weight:900; color:white; text-transform:uppercase; line-height:1;">Big Teeth<br>Small Shorts</div>
+          <div style="font-family:'DM Sans',sans-serif; font-size:9px; color:rgba(255,255,255,0.6); text-align:right; text-transform:uppercase; letter-spacing:0.1em;">Film Festival<br>Chicago, IL</div>
+        </div>
+        <!-- font key -->
+        <div style="background:var(--off-white); padding:10px 14px; display:flex; gap:20px; flex-wrap:wrap;">
+          <span style="font-size:9px; color:var(--slate);"><strong style="font-family:'FatFrank',sans-serif; color:var(--navy); font-size:9px; text-transform:uppercase;">FatFrank</strong> — headers, labels, pills</span>
+          <span style="font-size:9px; color:var(--slate);"><strong style="font-family:'Antarctican Headline',serif; color:var(--navy);">Antarctican</strong> — film titles, subheads</span>
+          <span style="font-size:9px; color:var(--slate);"><strong style="font-family:'DM Sans',sans-serif; color:var(--navy);">DM Sans</strong> — body, credits, fine print</span>
+        </div>
+      </div>
+
+      <!-- PILLS DEMO -->
+      <div style="background:var(--navy); padding:8px 12px; margin-bottom:10px; display:flex; flex-wrap:wrap; gap:5px; align-items:center;">
+        <span style="font-family:'FatFrank',sans-serif; font-size:8px; font-weight:900; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.4); margin-right:4px;">Labels &amp; Pills</span>
+        <span style="font-family:'FatFrank',sans-serif; font-size:8px; font-weight:900; text-transform:uppercase; letter-spacing:0.1em; background:var(--rose); color:white; padding:3px 9px;">Small Short</span>
+        <span style="font-family:'FatFrank',sans-serif; font-size:8px; font-weight:900; text-transform:uppercase; letter-spacing:0.1em; background:var(--denim); color:var(--navy); padding:3px 9px;">Micro Short</span>
+        <span style="font-family:'FatFrank',sans-serif; font-size:8px; font-weight:900; text-transform:uppercase; letter-spacing:0.1em; border:1px solid white; color:white; padding:3px 9px;">Official Selection</span>
+        <span style="font-family:'FatFrank',sans-serif; font-size:8px; font-weight:900; text-transform:uppercase; letter-spacing:0.1em; background:var(--yellow); color:var(--navy); padding:3px 9px;">Winter 2026</span>
+        <span style="font-family:'FatFrank',sans-serif; font-size:8px; font-weight:900; text-transform:uppercase; letter-spacing:0.1em; background:var(--hot-pink); color:white; padding:3px 9px;">Summer 2026</span>
+        <span style="font-family:'FatFrank',sans-serif; font-size:8px; font-weight:900; text-transform:uppercase; letter-spacing:0.1em; background:var(--mint); color:var(--navy); padding:3px 9px;">Animation</span>
+        <span style="font-family:'FatFrank',sans-serif; font-size:8px; font-weight:900; text-transform:uppercase; letter-spacing:0.1em; background:var(--coral); color:white; padding:3px 9px;">Comedy</span>
+      </div>
+
+      <!-- SIZE REFERENCE STRIP -->
+      <div style="border:1px solid #ddd; margin-bottom:10px; padding:8px 12px; background:white;">
+        <div style="font-family:'FatFrank',sans-serif; font-size:8px; font-weight:900; text-transform:uppercase; letter-spacing:0.12em; color:var(--slate); margin-bottom:8px;">Size Reference</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; font-size:9px;">
+          <div>
+            <div style="font-family:'FatFrank',sans-serif; font-size:8px; text-transform:uppercase; color:var(--navy); letter-spacing:0.08em; margin-bottom:4px; border-bottom:1px solid var(--denim); padding-bottom:2px;">FatFrank</div>
+            <div style="color:var(--slate); line-height:1.7;">Display: 40–60pt / 56–80px<br>Section: 24–32pt / 32–48px<br>Labels: 6–8pt / 10–13px</div>
+          </div>
+          <div>
+            <div style="font-family:'FatFrank',sans-serif; font-size:8px; text-transform:uppercase; color:var(--navy); letter-spacing:0.08em; margin-bottom:4px; border-bottom:1px solid var(--denim); padding-bottom:2px;">Antarctican</div>
+            <div style="color:var(--slate); line-height:1.7;">Titles: 14–18pt / 20–28px<br>Subheads: 12–16pt / 18–24px</div>
+          </div>
+          <div>
+            <div style="font-family:'FatFrank',sans-serif; font-size:8px; text-transform:uppercase; color:var(--navy); letter-spacing:0.08em; margin-bottom:4px; border-bottom:1px solid var(--denim); padding-bottom:2px;">DM Sans</div>
+            <div style="color:var(--slate); line-height:1.7;">Body: 8–10pt / 15–17px<br>Credits: Bold same size<br>Fine print: 6–7pt / 12–13px</div>
+          </div>
+        </div>
+        <div style="font-size:8px; color:var(--slate); margin-top:6px; opacity:0.7;">Print in pt · Screen in px · Social runs 1.3–1.5× screen sizes · Tablet Gothic (Adobe CC) is the preferred substitute for DM Sans</div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:10px;">
+        <div class="rules-box yes">
+          <div class="rules-head">Yes</div>
+          <ul>
+            <li>FatFrank for primary headlines and labels</li>
+            <li>Antarctican Headline Bold when a narrower or lighter headline is needed</li>
+            <li>Tablet Gothic or DM Sans for all body copy</li>
+            <li>ALL-CAPS for labels and pill text only</li>
+          </ul>
+        </div>
+        <div class="rules-box no">
+          <div class="rules-head">No</div>
+          <ul>
+            <li>FatFrank for paragraphs or body copy</li>
+            <li>Fonts outside the three-font system</li>
+            <li>Body copy in all-caps</li>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- RIGHT: LOGOS -->
+    <div>
+      <div class="section-label">Identity</div>
+      <div class="section-title">Logo Usage</div>
+      <hr class="divider">
+
+      <!-- 4-up logo grid: Primary, Legs, Wide Laurel White, Wide Laurel Navy -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:8px;">
+        <div class="version-box dark-bg" style="display:flex; flex-direction:column; align-items:center; padding:10px 12px;">
+          <div class="v-label" style="width:100%; margin-bottom:6px;">Primary Mark</div>
+          <img src="images/BTSSFF_shorts-nolegs-logo_2025.png" alt="BTSSFF Shorts Logo" style="max-width:120px; max-height:110px; object-fit:contain;">
+        </div>
+        <div class="version-box dark-bg" style="display:flex; flex-direction:column; align-items:center; padding:10px 12px;">
+          <div class="v-label" style="width:100%; margin-bottom:6px;">Poster Version — Shorts with Legs</div>
+          <img src="images/BTSSFF-Logo-legs-transparent.png" alt="BTSSFF Shorts with Legs" style="max-width:120px; max-height:110px; object-fit:contain;">
+        </div>
+        <div class="version-box dark-bg" style="display:flex; flex-direction:column; align-items:center; padding:10px 12px;">
+          <div class="v-label" style="width:100%; margin-bottom:6px;">Wide Format — White Laurel</div>
+          <img src="images/BTSSFF_Laurels_2024-WHITE.png" alt="BTSSFF Laurel White" style="max-width:100%; max-height:60px; object-fit:contain; margin-top:6px;">
+        </div>
+        <div class="version-box light-bg" style="display:flex; flex-direction:column; align-items:center; padding:10px 12px;">
+          <div class="v-label" style="width:100%; margin-bottom:6px;">Light Background — Navy Laurel</div>
+          <img src="images/BTSSFF_Laurels_2024-DARK-BLUE.png" alt="BTSSFF Laurel Navy" style="max-width:100%; max-height:60px; object-fit:contain; margin-top:6px;">
+        </div>
+      </div>
+
+      <!-- Social icon + callout inline -->
+      <div style="display:grid; grid-template-columns:80px 1fr; gap:8px; margin-bottom:8px; align-items:center;">
+        <div class="version-box dark-bg" style="padding:8px; display:flex; flex-direction:column; align-items:center; gap:4px;">
+          <div class="v-label" style="font-size:6px;">Profile / Favicon</div>
+          <img src="images/BTSSFF-INSTA-ICON_2025.png" alt="BTSSFF Instagram Icon" style="width:48px; height:48px; object-fit:contain;">
+        </div>
+        <div class="callout" style="margin:0; font-size:9px;">
+          <strong>Official Selection Posts:</strong> Use laurel in Accent Palette color. See page 4 for approved background + color combinations.
+        </div>
+      </div>
+
+      <table class="logo-table" style="font-size:9px;">
+        <tr><td class="situation">Square or portrait</td><td class="what">Use the shorts illustration</td></tr>
+        <tr><td class="situation">Wide or landscape</td><td class="what">Use the laurel lockup</td></tr>
+        <tr><td class="situation">On dark background</td><td class="what">White laurel version</td></tr>
+        <tr><td class="situation">On light background</td><td class="what">Navy laurel version</td></tr>
+        <tr><td class="situation">Min size (screen)</td><td class="what">Shorts: 80px · Laurel: 200px</td></tr>
+        <tr><td class="situation">Min size (print)</td><td class="what">Shorts: 1" · Laurel: 2.5"</td></tr>
+        <tr><td class="situation">"Presented By" credit</td><td class="what">BTP red square logo, footer only</td></tr>
+        <tr class="never"><td class="situation">Never</td><td class="what">Recolor the shorts illustration</td></tr>
+        <tr class="never"><td class="situation">Never</td><td class="what">Chatter Teeth as a standalone BTSSFF logo</td></tr>
+        <tr class="never"><td class="situation">Never</td><td class="what">Place logo over photos without darkening or overlaying for legibility</td></tr>
+      </table>
+
+      <div class="callout" style="margin-top:8px; font-size:9px;">
+        <strong>Parent brand:</strong> BTSSFF is Presented By Big Teeth Productions. BTP logo in footer credit only — never as the main festival identity.
+      </div>
+
+    </div>
+
+  </div><!-- end page-body -->
+
+  <div class="page-footer">
+    <span>bigteethsmallshorts.com · Chicago, IL · Internal Brand Reference · 2026</span>
+    <span class="presented">Presented by <img src="images/BTP_Box_Red_Vertical.png" alt="Big Teeth Productions" style="height:24px; width:auto; object-fit:contain;"></span>
+  </div>
+</div>
+
+
+<!-- ============================================================ -->
+<!-- PAGE 3: SOCIAL FORMATS -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="page-header">
+    <span class="left">Big Teeth Small Shorts Film Fest · Brand Guidelines 2026</span>
+    <span class="right">Social Formats · 3 of 4 · Internal Brand Reference · 2026 Edition</span>
+  </div>
+
+  <div class="page-body" style="flex:1; padding:20px 32px; display:flex; flex-direction:column; gap:14px;">
+
+    <p style="font-size:10px; color:var(--slate); line-height:1.5; border-left:3px solid var(--denim); padding-left:10px; margin:0;">These formats represent our current working system. Layouts evolve season to season — the consistent elements are the typography, color palette, and brand devices, not the exact composition.</p>
+
+    <!-- Row 1: Portrait post types — 4 cols -->
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; align-items:start;">
+
+      <!-- 1: OFFICIAL SELECTION POST -->
+      <div>
+        <div style="font-family:'FatFrank',sans-serif; font-size:7px; font-weight:900; text-transform:uppercase; letter-spacing:0.12em; color:var(--slate); margin-bottom:5px;">Official Selection</div>
+        <div style="overflow:hidden; margin-bottom:6px; box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+          <img src="images/btssff_win26_poster_are_you_still_watching.png" alt="Official Selection post" style="width:100%; display:block; max-height:260px; object-fit:cover; object-position:top;">
+        </div>
+        <p style="font-size:8px; color:var(--slate); line-height:1.5; margin:0 0 3px;"><strong style="color:var(--navy);">Accent palette.</strong> Header bar in primary bg + accent laurel. Film still + FatFrank title. See page 4 for approved color combos.</p>
+        <p style="font-size:8px; color:var(--slate); line-height:1.5; margin:0;"><strong style="color:var(--navy);">Production:</strong> InDesign + Data Merge. Title, filmmaker, still swap per spreadsheet record. One export = full selection set.</p>
+      </div>
+
+      <!-- 2: DEADLINE POST -->
+      <div>
+        <div style="font-family:'FatFrank',sans-serif; font-size:7px; font-weight:900; text-transform:uppercase; letter-spacing:0.12em; color:var(--slate); margin-bottom:5px;">Deadline Post</div>
+        <div style="overflow:hidden; margin-bottom:6px; box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+          <img src="images/btssff-sleepybird-portrait.png" alt="Sleepy Bird deadline post" style="width:100%; display:block; max-height:260px; object-fit:cover; object-position:top;">
+        </div>
+        <p style="font-size:8px; color:var(--slate); line-height:1.5; margin:0 0 3px;"><strong style="color:var(--navy);">Primary palette only.</strong> Split composition — FatFrank title left, illustration right. Rose pill for deadline name. Tape label for URL.</p>
+        <p style="font-size:8px; color:var(--slate); line-height:1.5; margin:0;"><strong style="color:var(--navy);">Note:</strong> Current versions being updated for Instagram safe zones.</p>
+      </div>
+
+      <!-- 3: DEADLINE PHOTO VARIANT -->
+      <div>
+        <div style="font-family:'FatFrank',sans-serif; font-size:7px; font-weight:900; text-transform:uppercase; letter-spacing:0.12em; color:var(--slate); margin-bottom:5px;">Deadline · Photo Variant</div>
+        <div style="overflow:hidden; margin-bottom:6px; box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+          <img src="images/btssff_deadlinepost-2025.png" alt="Extended deadline post with photos" style="width:100%; display:block; max-height:260px; object-fit:cover; object-position:top;">
+        </div>
+        <p style="font-size:8px; color:var(--slate); line-height:1.5; margin:0;"><strong style="color:var(--navy);">Primary palette only.</strong> Same split system — audience photos replace illustration. Works well for later deadlines when energy needs a boost.</p>
+      </div>
+
+      <!-- 4: TICKET SALES / 50% OFF -->
+      <div>
+        <div style="font-family:'FatFrank',sans-serif; font-size:7px; font-weight:900; text-transform:uppercase; letter-spacing:0.12em; color:var(--slate); margin-bottom:5px;">Ticket Launch · 50% Off</div>
+        <div style="overflow:hidden; margin-bottom:6px; box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+          <img src="images/btssff-50-off-winter25.png" alt="50% off ticket launch post" style="width:100%; display:block; max-height:260px; object-fit:cover; object-position:top;">
+        </div>
+        <p style="font-size:8px; color:var(--slate); line-height:1.5; margin:0;"><strong style="color:var(--navy);">Primary palette only.</strong> Slate bg, photo grid, rose CTA block. 50% off window is 24 hours — post goes out the moment tickets go live.</p>
+      </div>
+
+    </div>
+
+    <!-- Row 2: Wide format types — 2 cols -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; border-top:1px solid #e8e4de; padding-top:10px;">
+
+      <!-- CAROUSEL -->
+      <div>
+        <div style="font-family:'FatFrank',sans-serif; font-size:7px; font-weight:900; text-transform:uppercase; letter-spacing:0.12em; color:var(--slate); margin-bottom:5px;">Carousel · Collage</div>
+        <div style="overflow:hidden; margin-bottom:6px; box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+          <img src="images/carousel-all_panels_2026-winter-1350px.jpg" alt="Winter 2026 carousel" style="width:100%; display:block; max-height:140px; object-fit:cover; object-position:left center;">
+        </div>
+        <p style="font-size:8px; color:var(--slate); line-height:1.5; margin:0;"><strong style="color:var(--navy);">Primary palette only.</strong> Slate bg · film stills + audience photos butted tight · FatFrank headlines · tape labels. Used for ticket launch and between-show recaps.</p>
+      </div>
+
+      <!-- EVENT HEADER -->
+      <div>
+        <div style="font-family:'FatFrank',sans-serif; font-size:7px; font-weight:900; text-transform:uppercase; letter-spacing:0.12em; color:var(--slate); margin-bottom:5px;">Event Header · Email · Social · Web · Partner Listings</div>
+        <div style="overflow:hidden; margin-bottom:6px; box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+          <img src="images/Choose_Chicago_Header-Summer_2025.png" alt="Event header" style="width:100%; display:block; max-height:140px; object-fit:cover; object-position:center 75%;">
+        </div>
+        <p style="font-size:8px; color:var(--slate); line-height:1.5; margin:0;"><strong style="color:var(--navy);">Primary palette only.</strong> Audience photo behind · cool dark overlay · FatFrank title left · shorts illustration right · event info inline. Same layout adapts to email banner, social header, web hero, and partner listings — crop and safe zone adjust per format.</p>
+      </div>
+
+    </div>
+
+  </div><!-- end page-body -->
+
+  <!-- FULL-WIDTH QUICK RULES -->
+  <div class="quick-rules-full">
+    <div class="always-col">
+      <div class="qr-head always-head">Always</div>
+      <ul>
+        <li>Shorts illustration as your primary logo</li>
+        <li>Navy as your default dark background</li>
+        <li>FatFrank for primary headlines — Antarctican when narrower treatment needed</li>
+        <li>Tablet Gothic or DM Sans for body copy</li>
+        <li>Rotate all four Accent Palette colors across Official Selection posts</li>
+        <li>Stack tape labels with a slight tilt</li>
+        <li>"Presented By Big Teeth Productions" on all event materials</li>
+      </ul>
+    </div>
+    <div class="never-col">
+      <div class="qr-head never-head">Never</div>
+      <ul>
+        <li>Recolor the shorts illustration</li>
+        <li>Accent Palette colors in print materials</li>
+        <li>FatFrank for body copy</li>
+        <li>Rounded corners on anything</li>
+        <li>BTP logo prominent — footer credit only</li>
+        <li>Warm tints on photos — always cool (navy/slate overlay)</li>
+        <li>More than one Accent Palette color in the same post</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>bigteethsmallshorts.com · Chicago, IL · Internal Brand Reference · 2026</span>
+    <span class="presented">Presented by <img src="images/BTP_Box_Red_Vertical.png" alt="Big Teeth Productions" style="height:24px; width:auto; object-fit:contain;"></span>
+  </div>
+</div>
+
+
+<!-- ============================================================ -->
+<!-- PAGE 4: SOCIAL COLOR REFERENCE -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="page-header">
+    <span class="left">Big Teeth Small Shorts Film Fest · Brand Guidelines 2026</span>
+    <span class="right">Social Color Reference · 4 of 4 · Internal Brand Reference · 2026 Edition</span>
+  </div>
+
+  <div class="page-body" style="flex:1; padding:24px 32px; display:flex; flex-direction:column; gap:24px;">
+
+    <p style="font-size:10px; color:var(--slate); line-height:1.5; border-left:3px solid var(--denim); padding-left:10px; margin:0;">Approved background + accent laurel combinations for Official Selection posts, winner announcements, and film celebration content. One accent color per post — rotate across the set to keep the feed varied.</p>
+
+    <!-- Navy row — full width, 4 across — bigger -->
+    <div>
+      <div style="font-family:'FatFrank',sans-serif; font-size:8px; font-weight:900; text-transform:uppercase; letter-spacing:0.12em; color:var(--slate); margin-bottom:8px; padding-bottom:4px; border-bottom:1px solid #e8e4de;">Navy Background</div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px;">
+        <div><img src="images/laurel-navy-mint.jpg" style="width:100%; display:block; box-shadow:0 2px 6px rgba(0,0,0,0.2);"><div style="font-size:8px; color:var(--slate); margin-top:5px; font-family:monospace;">Navy + Mint</div></div>
+        <div><img src="images/laurel-navy-yellow.jpg" style="width:100%; display:block; box-shadow:0 2px 6px rgba(0,0,0,0.2);"><div style="font-size:8px; color:var(--slate); margin-top:5px; font-family:monospace;">Navy + Yellow</div></div>
+        <div><img src="images/laurel-navy-magenta.jpg" style="width:100%; display:block; box-shadow:0 2px 6px rgba(0,0,0,0.2);"><div style="font-size:8px; color:var(--slate); margin-top:5px; font-family:monospace;">Navy + Magenta</div></div>
+        <div><img src="images/laurel-navy-orange.jpg" style="width:100%; display:block; box-shadow:0 2px 6px rgba(0,0,0,0.2);"><div style="font-size:8px; color:var(--slate); margin-top:5px; font-family:monospace;">Navy + Orange</div></div>
+      </div>
+    </div>
+
+    <!-- Second row: Slate / Denim / Off-White — 3 equal cols, 2 swatches each — bigger -->
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px;">
+
+      <div>
+        <div style="font-family:'FatFrank',sans-serif; font-size:8px; font-weight:900; text-transform:uppercase; letter-spacing:0.12em; color:var(--slate); margin-bottom:8px; padding-bottom:4px; border-bottom:1px solid #e8e4de;">Slate Background</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div><img src="images/laurel-slate-mint.jpg" style="width:100%; display:block; box-shadow:0 2px 6px rgba(0,0,0,0.2);"><div style="font-size:8px; color:var(--slate); margin-top:5px; font-family:monospace;">Slate + Mint</div></div>
+          <div><img src="images/laurel-slate-yellow.jpg" style="width:100%; display:block; box-shadow:0 2px 6px rgba(0,0,0,0.2);"><div style="font-size:8px; color:var(--slate); margin-top:5px; font-family:monospace;">Slate + Yellow</div></div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-family:'FatFrank',sans-serif; font-size:8px; font-weight:900; text-transform:uppercase; letter-spacing:0.12em; color:var(--slate); margin-bottom:8px; padding-bottom:4px; border-bottom:1px solid #e8e4de;">Denim Background</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div><img src="images/laurel-denim-magenta.jpg" style="width:100%; display:block; box-shadow:0 2px 6px rgba(0,0,0,0.2);"><div style="font-size:8px; color:var(--slate); margin-top:5px; font-family:monospace;">Denim + Magenta</div></div>
+          <div><img src="images/laurel-denim-orange.jpg" style="width:100%; display:block; box-shadow:0 2px 6px rgba(0,0,0,0.2);"><div style="font-size:8px; color:var(--slate); margin-top:5px; font-family:monospace;">Denim + Orange</div></div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-family:'FatFrank',sans-serif; font-size:8px; font-weight:900; text-transform:uppercase; letter-spacing:0.12em; color:var(--slate); margin-bottom:8px; padding-bottom:4px; border-bottom:1px solid #e8e4de;">Off-White Background</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div><img src="images/laurel-offwhite-magenta.jpg" style="width:100%; display:block; box-shadow:0 2px 6px rgba(0,0,0,0.2);"><div style="font-size:8px; color:var(--slate); margin-top:5px; font-family:monospace;">Off-White + Magenta</div></div>
+          <div><img src="images/laurel-offwhite-orange.jpg" style="width:100%; display:block; box-shadow:0 2px 6px rgba(0,0,0,0.2);"><div style="font-size:8px; color:var(--slate); margin-top:5px; font-family:monospace;">Off-White + Orange</div></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- end page-body -->
+
+  <div class="page-footer">
+    <span>bigteethsmallshorts.com · Chicago, IL · Internal Brand Reference · 2026</span>
+    <span class="presented">Presented by <img src="images/BTP_Box_Red_Vertical.png" alt="Big Teeth Productions" style="height:24px; width:auto; object-fit:contain;"></span>
+  </div>
+</div>
+
+</body>
+</html>
